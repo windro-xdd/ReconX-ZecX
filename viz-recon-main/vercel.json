@@ -5,7 +5,7 @@
     { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
   ],
   "env": {
-    "VITE_API_BASE_URL": "https://YOUR-BACKEND-URL" 
+    "VITE_API_BASE_URL": "https://reconx-zecx.onrender.com" 
   },
   "routes": [
     { "src": "/(.*)", "dest": "/index.html" }
