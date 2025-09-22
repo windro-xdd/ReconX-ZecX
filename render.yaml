@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: reconx-api
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      # Optionally switch to Postgres by adding DATABASE_URL
+      # - key: DATABASE_URL
+      #   value: postgres+asyncpg://user:pass@host:5432/dbname

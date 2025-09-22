@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+.Python
+
+# Virtual envs
+.venv/
+venv/
+ENV/
+.env
+
+# Node
+node_modules/
+viz-recon-main/node_modules/
+.vite/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# DB files (local dev)
+reconx.db
+reconx.db-shm
+reconx.db-wal
+
+# Logs
+logs/
+*.log
+
+# Build artifacts
+*.dist.zip
+*.coverage
+coverage/
+
+# Env examples allowed
+!.env.example

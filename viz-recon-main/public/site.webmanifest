@@ -1,0 +1,22 @@
+{
+  "name": "ReconX Dashboard",
+  "short_name": "ReconX",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1520",
+  "theme_color": "#0bd1c7",
+  "icons": [
+    {
+      "src": "/reconx-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/reconx-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

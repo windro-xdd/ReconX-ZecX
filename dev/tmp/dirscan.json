@@ -1,0 +1,8 @@
+﻿{
+  "base_url": "http://www.itsecgames.com",
+  "authorized": true,
+  "wordlist": ["/","admin","download.htm","robots.txt"],
+  "status_include": "200,301,302",
+  "extensions": "",
+  "timeout": 10
+}

@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: reconx
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+  api:
+    build: .
+    command: sh -c "python -c 'import time; time.sleep(3)' && alembic upgrade head && uvicorn reconx.api.main:app --host 0.0.0.0 --port 8000"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: reconx
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+volumes:
+  db_data:

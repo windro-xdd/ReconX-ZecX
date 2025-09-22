@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ReconX Dark Theme Design System */
+
+@layer base {
+  :root {
+    /* Base dark theme */
+    --background: 220 13% 8%;
+    --foreground: 220 9% 95%;
+
+    /* Cards and surfaces */
+    --card: 220 13% 11%;
+    --card-foreground: 220 9% 95%;
+    --card-hover: 220 13% 13%;
+
+    /* Primary - Cyber blue */
+    --primary: 199 89% 48%;
+    --primary-foreground: 220 13% 8%;
+    --primary-glow: 199 89% 60%;
+
+    /* Secondary - Dark surface */
+    --secondary: 220 13% 16%;
+    --secondary-foreground: 220 9% 85%;
+
+    /* Success - Matrix green */
+    --success: 120 100% 40%;
+    --success-foreground: 220 13% 8%;
+    --success-glow: 120 100% 50%;
+
+    /* Warning - Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 13% 8%;
+
+    /* Destructive - Cyber red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 9% 95%;
+
+    /* Muted elements */
+    --muted: 220 13% 14%;
+    --muted-foreground: 220 9% 65%;
+
+    /* Accents */
+    --accent: 220 13% 16%;
+    --accent-foreground: 220 9% 85%;
+
+    /* Borders and inputs */
+    --border: 220 13% 20%;
+    --input: 220 13% 16%;
+    --ring: 199 89% 48%;
+
+    /* Status colors */
+    --status-online: 120 100% 40%;
+    --status-offline: 0 84% 60%;
+    --status-running: 199 89% 48%;
+    --status-paused: 38 92% 50%;
+    --status-cancelled: 220 9% 50%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(199 89% 48%), hsl(199 89% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(120 100% 40%), hsl(120 100% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(220 13% 11%), hsl(220 13% 13%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 12px -2px hsl(220 13% 5% / 0.8);
+    --shadow-glow: 0 0 20px hsl(199 89% 48% / 0.3);
+    --shadow-success: 0 0 20px hsl(120 100% 40% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv05', 'cv03', 'cv04', 'cv09';
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Animations */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .animate-pulse {
+    animation: var(--animation-pulse);
+  }
+}
