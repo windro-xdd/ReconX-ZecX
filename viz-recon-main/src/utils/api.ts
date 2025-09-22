@@ -6,8 +6,11 @@
 export function apiBase(): string {
   const envBase = import.meta.env.VITE_API_BASE_URL as string | undefined;
   const storedBase = typeof window !== 'undefined' ? window.localStorage.getItem('API_BASE_URL') || undefined : undefined;
-  const devDefault = (import.meta as any).env?.DEV ? 'http://127.0.0.1:8000' : undefined;
-  const baseUrl = envBase || storedBase || devDefault;
+  const isDev = (import.meta as any).env?.DEV;
+  const devDefault = isDev ? 'http://127.0.0.1:8000' : undefined;
+  // Production fallback to your Render API to avoid hitting Vercel static with relative /api calls
+  const prodFallback = !isDev ? 'https://reconx-zecx.onrender.com' : undefined;
+  const baseUrl = envBase || storedBase || devDefault || prodFallback;
   return baseUrl && (baseUrl.startsWith('http://') || baseUrl.startsWith('https://')) ? baseUrl.replace(/\/$/, '') : '';
 }
 
