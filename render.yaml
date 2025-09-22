@@ -7,8 +7,6 @@ services:
     dockerfilePath: ./Dockerfile
     autoDeploy: true
     envVars:
-      - key: PORT
-        value: 10000
       - key: PYTHONUNBUFFERED
         value: "1"
       # Optionally switch to Postgres by adding DATABASE_URL
